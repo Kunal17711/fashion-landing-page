@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avera — Premium bottled excellence. Craft meets purity in every silhouette.">
+    <title>Avera | Premium Split Slider</title>
+    <link rel="icon" href="data:,">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/flipdown/dist/flipdown.css">
+    <script src="https://unpkg.com/flipdown/dist/flipdown.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+         HEADER
+    ============================================================ -->
+    <header class="main-header" role="banner">
+
+        <!-- Top Announcement Bar -->
+        <div class="top-bar" role="complementary" aria-label="Announcement">
+            <div class="top-bar-container">
+                <div class="top-bar-left"></div>
+                <div class="top-bar-center">
+                    <p>✦ Free Shipping On Orders Over $100 ✦</p>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#" class="top-bar-link">Find a Boutique</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <nav id="main-nav" class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+
+                <!-- Logo -->
+                <div class="nav-left">
+                    <a href="#" class="logo" aria-label="Avera Home">Avera</a>
+                </div>
+
+                <!-- Nav Links -->
+                <div class="nav-center">
+                    <ul class="nav-links" role="menubar">
+                        <li role="none">
+                            <a href="#" class="nav-link" role="menuitem">HOME</a>
+                        </li>
+                        <li class="has-dropdown" role="none">
+                            <a href="#" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                SHOP <i data-lucide="chevron-down" class="dropdown-arrow" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown" role="menu" aria-label="Shop">
+                                <ul>
+                                    <li><a href="#" role="menuitem">Spring 2024</a></li>
+                                    <li><a href="#" role="menuitem">Essential Noir</a></li>
+                                    <li><a href="#" role="menuitem">Artisan Series</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="has-dropdown" role="none">
+                            <a href="#" class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                COLLECTIONS <i data-lucide="chevron-down" class="dropdown-arrow" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown" role="menu" aria-label="Collections">
+                                <ul>
+                                    <li><a href="#" role="menuitem">Limited Edition</a></li>
+                                    <li><a href="#" role="menuitem">Classic Collection</a></li>
+                                    <li><a href="#" role="menuitem">The Glass Series</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li role="none">
+                            <a href="#" class="nav-link" role="menuitem">ABOUT</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Nav Actions -->
+                <div class="nav-right">
+                    <div class="nav-icons" role="toolbar" aria-label="Site actions">
+                        <button class="icon-btn" aria-label="Search site">
+                            <i data-lucide="search" aria-hidden="true"></i>
+                        </button>
+                        <button class="icon-btn" aria-label="My account">
+                            <i data-lucide="user" aria-hidden="true"></i>
+                        </button>
+                        <button class="icon-btn" aria-label="Shopping bag" data-cart-count="0">
+                            <i data-lucide="shopping-bag" aria-hidden="true"></i>
+                            <span class="cart-badge" aria-live="polite"></span>
+                        </button>
+                    </div>
+                    <a href="#" class="btn-explore">EXPLORE</a>
+                    <button id="mobile-toggle" class="mobile-menu-toggle" aria-label="Open navigation menu"
+                        aria-expanded="false" aria-controls="mobile-menu">
+                        <i data-lucide="menu" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Mobile navigation"
+        hidden>
+        <button id="mobile-close" class="mobile-close-btn" aria-label="Close navigation menu">
+            <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+        <nav aria-label="Mobile navigation">
+            <ul class="mobile-nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">COLLECTIONS</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">EXPLORE</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <!-- ============================================================
+         HERO SPLIT SLIDER
+    ============================================================ -->
+    <section class="hero-slider slider-wrapper" aria-label="Hero showcase" aria-roledescription="carousel">
+
+        <div class="slider-container" aria-live="polite">
+            <!-- Left Images -->
+            <div class="slider-col left-col" aria-hidden="true">
+                <div class="slide-img active" style="background-image: url('hero-1.jpg');"></div>
+                <div class="slide-img" style="background-image: url('hero-3.jpg');"></div>
+                <div class="slide-img" style="background-image: url('hero-5.jpg');"></div>
+                <div class="slide-img" style="background-image: url('hero-bw-2.jpg');"></div>
+            </div>
+            <!-- Right Images -->
+            <div class="slider-col right-col" aria-hidden="true">
+                <div class="slide-img active" style="background-image: url('hero-2.jpg');"></div>
+                <div class="slide-img" style="background-image: url('hero-4.jpg');"></div>
+                <div class="slide-img" style="background-image: url('hero-bw-1.jpg');"></div>
+                <div class="slide-img" style="background-image: url('hero-bw-3.jpg');"></div>
+            </div>
+        </div>
+
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <!-- Hero Text -->
+        <div class="text-layer">
+            <div class="text-content">
+                <p class="subtext">Premium Bottled Excellence</p>
+                <h1 class="main-heading">
+                    <span class="line">CRAFT MEETS</span>
+                    <span class="line">PURITY</span>
+                </h1>
+                <button id="explore-btn" class="cta-btn" aria-label="Discover more about our collection">
+                    Discover More <span class="arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots" role="tablist" aria-label="Slide indicators">
+            <button class="dot active" role="tab" aria-selected="true" aria-label="Slide 1">
+                <div class="dot-progress" aria-hidden="true"></div>
+            </button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Slide 2">
+                <div class="dot-progress" aria-hidden="true"></div>
+            </button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Slide 3">
+                <div class="dot-progress" aria-hidden="true"></div>
+            </button>
+            <button class="dot" role="tab" aria-selected="false" aria-label="Slide 4">
+                <div class="dot-progress" aria-hidden="true"></div>
+            </button>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="slider-nav">
+            <button class="nav-arrow prev-btn" aria-label="Previous slide">
+                <i data-lucide="chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="nav-arrow next-btn" aria-label="Next slide">
+                <i data-lucide="chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         NEW SEASON EDITORIAL
+    ============================================================ -->
+    <section class="new-season section-spacing" aria-label="New season editorial">
+        <div class="season-container">
+
+            <div class="season-top">
+                <h2 class="season-top-title">The Curated <br><span class="italic">New Season</span></h2>
+            </div>
+
+            <div class="season-grid">
+                <div class="vertical-text left-vertical" aria-hidden="true">EST 1989 STUDIO</div>
+
+                <!-- Main Image -->
+                <div class="season-main-area">
+                    <figure class="main-img-box">
+                        <img src="images/season-main.jpg" alt="New season main editorial look" class="main-img"
+                            loading="lazy">
+
+                        <div class="floating-card" aria-label="Featured detail">
+                            <span class="card-label">FLUIDITY OF FORM</span>
+                            <p class="card-text">True elegance is found in the precision of a seam.</p>
+                            <span class="card-footer">ARCHITECTURAL CUT</span>
+                        </div>
+
+                        <figcaption class="img-bottom-text">
+                            <span class="exhibit">EXHIBIT A</span>
+                            <span class="fluidity">Satin Fluidity</span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Side Image -->
+                <div class="season-side-area">
+                    <figure class="side-img-box">
+                        <img src="images/season-side.jpg" alt="New season side editorial look" class="side-img"
+                            loading="lazy">
+                    </figure>
+                    <div class="vertical-text right-vertical" aria-hidden="true">
+                        <span class="archive">ARCHIVE / 2025 EDITION</span>
+                        <span class="material">RAW MATERIAL</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         CURATED ESSENTIALS CAROUSEL
+    ============================================================ -->
+    <section class="curated-essentials section-spacing" aria-label="Curated essentials product carousel">
+        <div class="essentials-container">
+
+            <header class="essentials-header">
+                <p class="editor-label">EDITOR'S PICK</p>
+                <h2 class="essentials-title">CURATED <span class="italic">Essentials</span></h2>
+            </header>
+
+            <div class="carousel-header">
+                <div class="carousel-controls" role="group" aria-label="Carousel navigation">
+                    <button class="carousel-arrow prev" aria-label="Previous products">
+                        <i data-lucide="arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="carousel-arrow next" aria-label="Next products">
+                        <i data-lucide="arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="carousel-track" id="essentials-track" role="list" aria-label="Product list">
+                <!-- Product cards injected via JS -->
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="carousel-progress-container" aria-hidden="true">
+                <div class="carousel-progress-track">
+                    <div class="carousel-progress-bar" id="essentials-progress"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         INTERACTIVE LOOKBOOK (HOTSPOT)
+    ============================================================ -->
+    <section class="interactive-lookbook section-spacing" aria-label="Interactive lookbook">
+        <div class="hotspot-container">
+            <img src="hotspot-hero.png" alt="Editorial lookbook featuring curated outfit" class="lookbook-bg"
+                loading="lazy">
+
+            <!-- Hotspot: Blazer -->
+            <button class="hotspot" style="top: 45%; left: 48%;"
+                data-product='{"img":"staff-1.jpg","name":"Linen Blend Blazer","price":"$680"}'
+                aria-label="View Linen Blend Blazer details">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+            </button>
+
+            <!-- Hotspot: Bag -->
+            <button class="hotspot" style="top: 75%; left: 35%;"
+                data-product='{"img":"best-2.jpg","name":"Structured Tote Bag","price":"$850"}'
+                aria-label="View Structured Tote Bag details">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+            </button>
+
+            <!-- Hotspot: Timepiece -->
+            <button class="hotspot" style="top: 22%; left: 51%;"
+                data-product='{"img":"staff-3.jpg","name":"Minimalist Timepiece","price":"$350"}'
+                aria-label="View Minimalist Timepiece details">
+                <span class="hotspot-dot" aria-hidden="true"></span>
+            </button>
+
+            <!-- Product Popup -->
+            <div class="product-popup" id="hotspot-popup" role="dialog" aria-modal="true" aria-label="Product details"
+                hidden>
+                <button class="close-popup" aria-label="Close product popup">&times;</button>
+                <div class="popup-content">
+                    <img src="" alt="" class="popup-img">
+                    <div class="popup-details">
+                        <h3 class="popup-name"></h3>
+                        <p class="popup-price"></p>
+                        <a href="#" class="shop-now-btn">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infinite Ticker Strip -->
+        <div class="ticker-strip" aria-hidden="true">
+            <div class="ticker-content">
+                <span class="ticker-item">✦ PREMIUM TEXTURE</span>
+                <span class="ticker-item">✦ AVERA EXCLUSIVE</span>
+                <span class="ticker-item">✦ PRECISION TAILORING</span>
+                <span class="ticker-item">✦ TIMELESS DESIGN</span>
+                <span class="ticker-item">✦ PREMIUM TEXTURE</span>
+                <span class="ticker-item">✦ AVERA EXCLUSIVE</span>
+                <span class="ticker-item">✦ PRECISION TAILORING</span>
+                <span class="ticker-item">✦ TIMELESS DESIGN</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         CURATED WARDROBE
+    ============================================================ -->
+    <section class="curated-wardrobe section-spacing" aria-label="Curated wardrobe">
+        <div class="wardrobe-container">
+
+            <!-- Left Navigation -->
+            <div class="wardrobe-nav">
+                <p class="section-label">ESSENTIAL TEXTURE</p>
+                <h2 class="wardrobe-title">Curated <br><span class="italic">Wardrobe</span></h2>
+
+                <ul class="category-list" role="tablist" aria-label="Product categories">
+                    <li class="category-item active" role="tab" aria-selected="true" data-category="new" tabindex="0">
+                        NEW ARRIVALS
+                    </li>
+                    <li class="category-item" role="tab" aria-selected="false" data-category="best" tabindex="-1">
+                        BEST SELLERS
+                    </li>
+                    <li class="category-item" role="tab" aria-selected="false" data-category="staff" tabindex="-1">
+                        STAFF PICKS
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Product Grid -->
+            <div class="product-grid" id="wardrobe-grid" role="tabpanel" aria-label="Products">
+                <!-- Products injected via JS -->
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         CAMPAIGN BANNER
+    ============================================================ -->
+    <section class="campaign-hero campaign-banner" aria-label="Campaign banner">
+        <div class="campaign-container">
+            <div class="campaign-split" aria-hidden="true">
+                <div class="campaign-part left-part"></div>
+                <div class="campaign-part center-part"></div>
+                <div class="campaign-part right-part"></div>
+            </div>
+            <div class="campaign-content">
+                <h2 class="campaign-title">Be the current</h2>
+                <p class="campaign-subtitle">not the wave.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         PRODUCT DETAIL SECTION
+    ============================================================ -->
+    <section id="product-detail" class="product-detail-section" aria-label="Featured product detail">
+        <div class="product-page-container">
+
+            <!-- Left: Image Gallery -->
+            <div class="product-gallery" role="region" aria-label="Product images">
+                <div class="main-image-container">
+                    <img id="main-product-image" src="new-1.jpg" alt="Camel Color-Block Jacket — front view">
+
+                    <!-- Thumbnails -->
+                    <div class="thumbnail-gallery" role="list" aria-label="Product image thumbnails">
+                        <button class="thumb-item active" role="listitem"
+                            onclick="changeProductImage('new-1.jpg', this)" aria-label="View front" aria-pressed="true">
+                            <img src="new-1.jpg" alt="Front view">
+                        </button>
+                        <button class="thumb-item" role="listitem" onclick="changeProductImage('new-2.jpg', this)"
+                            aria-label="View back" aria-pressed="false">
+                            <img src="new-2.jpg" alt="Back view">
+                        </button>
+                        <button class="thumb-item" role="listitem" onclick="changeProductImage('new-3.jpg', this)"
+                            aria-label="View detail" aria-pressed="false">
+                            <img src="new-3.jpg" alt="Detail view">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Product Details -->
+            <div class="product-details-panel">
+                <p class="brand-label-detail">AVERA FASHION CLOTHING</p>
+                <h1 class="product-title-detail">Camel Color-Block Jacket</h1>
+                <p class="product-subtitle-detail">Stripping away the noise, returning to pure sensory expression.</p>
+
+                <div class="price-block">
+                    <p class="product-price-detail">$247.00</p>
+                    <p class="tax-info">Shipping calculated at checkout.</p>
+                </div>
+
+                <div class="stock-status" role="status" aria-live="polite">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>IN STOCK — READY TO SHIP</span>
+                </div>
+
+                <!-- Size Selector -->
+                <div class="selector-group" role="group" aria-labelledby="size-label">
+                    <span class="selector-label" id="size-label">SIZE</span>
+                    <div class="size-options">
+                        <button class="size-btn active" aria-pressed="true">XS</button>
+                        <button class="size-btn" aria-pressed="false">S</button>
+                        <button class="size-btn" aria-pressed="false">M</button>
+                        <button class="size-btn" aria-pressed="false">L</button>
+                    </div>
+                </div>
+
+                <!-- Quantity & Add to Bag -->
+                <div class="purchase-row">
+                    <div class="quantity-selector" role="group" aria-label="Select quantity">
+                        <button class="qty-btn minus-qty" aria-label="Decrease quantity">−</button>
+                        <span class="qty-value-detail" aria-live="polite" aria-atomic="true">1</span>
+                        <button class="qty-btn plus-qty" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button class="btn-primary-detail" aria-label="Add Camel Color-Block Jacket to bag">
+                        ADD TO BAG
+                    </button>
+                </div>
+
+                <button class="btn-secondary-detail">BUY IT NOW</button>
+
+                <!-- Payment Security -->
+                <div class="payment-section">
+                    <div class="payment-header">
+                        <span class="payment-label">PAYMENT & SECURITY</span>
+                        <span class="encrypted-badge">
+                            <i data-lucide="shield-check" aria-hidden="true"></i> ENCRYPTED
+                        </span>
+                    </div>
+                    <div class="payment-methods">
+                        <img src="images/payment-methods.png"
+                            alt="Accepted payment methods: Visa, Mastercard, PayPal, Apple Pay">
+                    </div>
+                </div>
+
+                <!-- Info Bars -->
+                <div class="info-bars" aria-label="Product specifications">
+                    <div class="info-bar-item">
+                        <div class="bar-label">
+                            <span>FABRIC</span>
+                            <span>Heavy Satin</span>
+                        </div>
+                        <div class="progress-track" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                            aria-valuemax="100" aria-label="Fabric weight: 80%">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="info-bar-item">
+                        <div class="bar-label">
+                            <span>LOOSE</span>
+                            <span>TAILORED</span>
+                        </div>
+                        <div class="progress-track" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                            aria-valuemax="100" aria-label="Fit: 40% toward tailored">
+                            <div class="progress-fill" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="info-bar-item">
+                        <div class="bar-label">
+                            <span>STRUCTURED</span>
+                            <span>FLUID</span>
+                        </div>
+                        <div class="progress-track" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                            aria-valuemax="100" aria-label="Structure: 70% fluid">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordions -->
+                <div class="accordion-group">
+                    <div class="accordion-item-detail">
+                        <button class="accordion-header" onclick="toggleProductAccordion(this)" aria-expanded="false">
+                            <span>The Fabric</span>
+                            <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" hidden>
+                            Crafted from a custom-developed heavy satin blend, this jacket offers a luxurious sheen and
+                            substantial weight.
+                        </div>
+                    </div>
+                    <div class="accordion-item-detail active">
+                        <button class="accordion-header" onclick="toggleProductAccordion(this)" aria-expanded="true">
+                            <span>The Silhouette</span>
+                            <i data-lucide="minus" class="accordion-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content">
+                            Designed with structured shoulders and a tailored waist to define the form.
+                        </div>
+                    </div>
+                    <div class="accordion-item-detail">
+                        <button class="accordion-header" onclick="toggleProductAccordion(this)" aria-expanded="false">
+                            <span>The Details</span>
+                            <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" hidden>
+                            Finished with horn buttons, reinforced patch pockets, and tonal topstitching.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SHOP BY OCCASION
+    ============================================================ -->
+    <section class="shop-occasion section-spacing" aria-label="Shop by occasion">
+        <div class="occasion-container">
+            <div class="occasion-editorial-grid">
+
+                <!-- Featured (Left, Large) -->
+                <div class="occasion-featured">
+                    <a href="product.html" class="occasion-img-box" aria-label="The Sunday Ritual collection">
+                        <img src="hero-bw-2.jpg" alt="Woman in casual loungewear — The Sunday Ritual" class="zoom-img"
+                            loading="lazy">
+                        <div class="occasion-overlay">
+                            <span class="occasion-label">THE SUNDAY RITUAL</span>
+                            <h2 class="occasion-heading">Slow mornings start here.</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 2×2 Grid (Right) -->
+                <div class="occasion-grid-items">
+                    <a href="product.html" class="grid-item" aria-label="Occasion look 1">
+                        <div class="occasion-img-box">
+                            <img src="staff-2.jpg" alt="Styled look 1" class="zoom-img" loading="lazy">
+                        </div>
+                    </a>
+                    <a href="product.html" class="grid-item" aria-label="Occasion look 2">
+                        <div class="occasion-img-box">
+                            <img src="new-3.jpg" alt="Styled look 2" class="zoom-img" loading="lazy">
+                        </div>
+                    </a>
+                    <a href="product.html" class="grid-item" aria-label="Occasion look 3">
+                        <div class="occasion-img-box">
+                            <img src="best-1.jpg" alt="Styled look 3" class="zoom-img" loading="lazy">
+                        </div>
+                    </a>
+                    <a href="product.html" class="grid-item" aria-label="Occasion look 4">
+                        <div class="occasion-img-box">
+                            <img src="hero-bw-1.jpg" alt="Styled look 4" class="zoom-img" loading="lazy">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         TEXTILE & BALANCE EDITORIAL
+    ============================================================ -->
+    <section class="editorial-blocks section-spacing" aria-label="Editorial features">
+        <div class="editorial-container">
+
+            <!-- Block 1: Textile -->
+            <article class="editorial-block reveal-on-scroll">
+                <div class="editorial-text">
+                    <span class="section-label">THE MATERIAL</span>
+                    <h2 class="editorial-heading">Textile</h2>
+                    <p class="editorial-description">
+                        Sourced from the finest fibers to ensure a tactile experience that lasts.
+                        A balance of natural breathability and luxurious heavy-weight drape.
+                    </p>
+                </div>
+                <figure class="editorial-image">
+                    <img src="images/textile-editorial.jpg" alt="Close-up of premium satin textile" loading="lazy">
+                </figure>
+            </article>
+
+            <!-- Block 2: Balance -->
+            <article class="editorial-block reverse reveal-on-scroll">
+                <figure class="editorial-image">
+                    <img src="images/balance-editorial.jpg" alt="Model in balanced silhouette editorial" loading="lazy">
+                </figure>
+                <div class="editorial-text">
+                    <span class="section-label">THE RITUAL</span>
+                    <h2 class="editorial-heading">Balance</h2>
+                    <p class="editorial-description">
+                        Designed for the modern individual who seeks comfort without compromising style.
+                        A versatile piece that transitions effortlessly from day to night.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         OUTFIT BUILDER
+    ============================================================ -->
+    <section class="outfit-builder section-spacing" aria-label="Curated outfit builder">
+        <div class="outfit-container">
+
+            <header class="outfit-header">
+                <p class="section-label">CURATED SET</p>
+                <h2 class="outfit-title">The Evening <br><span class="italic">Unwind</span></h2>
+            </header>
+
+            <div class="outfit-split">
+
+                <!-- Main Outfit Image with Markers -->
+                <div class="outfit-main-image" role="img" aria-label="Outfit with numbered item markers">
+                    <img src="hero-bw-2.jpg" alt="Complete curated evening outfit">
+                    <button class="outfit-marker" style="top: 35%; left: 45%;" data-index="0"
+                        aria-label="View item 1: Minimal Tailored Blazer">1</button>
+                    <button class="outfit-marker" style="top: 70%; left: 35%;" data-index="1"
+                        aria-label="View item 2: Structured Tote Bag">2</button>
+                    <button class="outfit-marker" style="top: 80%; left: 55%;" data-index="2"
+                        aria-label="View item 3: High-Waist Trousers">3</button>
+                </div>
+
+                <!-- Outfit Cards -->
+                <div class="outfit-product-side">
+                    <div class="outfit-cards-list" role="list">
+
+                        <article class="outfit-card active" data-index="0" role="listitem">
+                            <div class="card-img">
+                                <img src="staff-1.jpg" alt="Minimal Tailored Blazer" loading="lazy">
+                            </div>
+                            <div class="card-info">
+                                <h3>Minimal Tailored Blazer</h3>
+                                <p>A structured silhouette in premium wool blend.</p>
+                                <div class="card-price-row">
+                                    <span class="price">$325.00</span>
+                                    <a href="#" class="shop-link">SHOP NOW</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="outfit-card" data-index="1" role="listitem">
+                            <div class="card-img">
+                                <img src="best-2.jpg" alt="Structured Tote Bag" loading="lazy">
+                            </div>
+                            <div class="card-info">
+                                <h3>Structured Tote Bag</h3>
+                                <p>Handcrafted leather with minimal hardware.</p>
+                                <div class="card-price-row">
+                                    <span class="price">$198.00</span>
+                                    <a href="#" class="shop-link">SHOP NOW</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="outfit-card" data-index="2" role="listitem">
+                            <div class="card-img">
+                                <img src="new-3.jpg" alt="High-Waist Trousers" loading="lazy">
+                            </div>
+                            <div class="card-info">
+                                <h3>High-Waist Trousers</h3>
+                                <p>Fluid movement with a tapered modern finish.</p>
+                                <div class="card-price-row">
+                                    <span class="price">$90.00</span>
+                                    <a href="#" class="shop-link">SHOP NOW</a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <button class="add-all-btn" aria-label="Add all 3 outfit items to cart for $613.00">
+                        ADD ALL TO CART — $613.00
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         LIMITED TIME OFFER
+    ============================================================ -->
+    <section class="limited-offer" aria-label="Limited time offer">
+        <div class="offer-bg" aria-hidden="true">
+            <img src="images/limited-offer-hero.jpg" alt="">
+            <div class="offer-overlay"></div>
+        </div>
+
+        <div class="offer-content-wrapper">
+            <div class="offer-text-side">
+                <span class="offer-label">SEASONAL RELEASE</span>
+                <h2 class="offer-heading">
+                    Limited Time <br>
+                    <span class="italic-text">Offer</span>
+                </h2>
+                <p class="offer-subtext">
+                    Receive a complimentary accessory with orders over $150.
+                    A curated gift to complete your look.
+                </p>
+                <a href="#" class="offer-cta" aria-label="Shop the limited collection">
+                    SHOP COLLECTION <span class="arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="offer-timer-side" aria-label="Countdown timer">
+                <div id="flipdown" class="flipdown"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         IN THE PRESS
+    ============================================================ -->
+    <section class="press-section section-spacing" aria-label="Press features">
+        <div class="press-container">
+            <header class="press-header">
+                <h2 class="press-title">In the press</h2>
+                <p class="press-subtext">Defining the future of modern silhouettes in global fashion and design.</p>
+            </header>
+
+            <div class="press-marquee" aria-hidden="true">
+                <div class="press-fade-left"></div>
+                <div class="press-track">
+                    <span class="press-logo">HARPER'S BAZAAR</span>
+                    <span class="press-logo">ELLE</span>
+                    <span class="press-logo">FORBES</span>
+                    <span class="press-logo">ALLURE</span>
+                    <span class="press-logo">THE NEW YORK TIMES</span>
+                    <span class="press-logo">HARPER'S BAZAAR</span>
+                    <span class="press-logo">ELLE</span>
+                    <span class="press-logo">FORBES</span>
+                    <span class="press-logo">ALLURE</span>
+                    <span class="press-logo">THE NEW YORK TIMES</span>
+                </div>
+                <div class="press-fade-right"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         PORTRAITS OF CONFIDENCE
+    ============================================================ -->
+    <section class="portraits-section section-spacing" aria-label="Customer portraits">
+        <div class="portraits-container">
+
+            <header class="portraits-header">
+                <div class="header-left">
+                    <span class="section-label">THE ARCHIVE COLLECTION</span>
+                    <h2 class="portraits-title">Portraits of <br><span class="italic">Confidence</span></h2>
+                </div>
+                <div class="header-right">
+                    <p class="header-desc">
+                        Refined silhouettes crafted with purposeful details. A collection that prioritizes
+                        thoughtful construction over fleeting seasonal trends.
+                    </p>
+                </div>
+            </header>
+
+            <div class="portraits-scroll-wrapper">
+                <div class="portraits-track" role="list">
+
+                    <article class="portrait-card" role="listitem">
+                        <figure class="portrait-img">
+                            <img src="staff-1.jpg" alt="Elena V. wearing Avera" loading="lazy">
+                        </figure>
+                        <blockquote class="portrait-content">
+                            <p class="portrait-quote">"The heavy satin feels like a second skin. It moves with grace and
+                                effortless power."</p>
+                            <footer class="portrait-meta">
+                                <cite class="p-name">ELENA V.</cite>
+                                <span class="p-role">Fashion Architect</span>
+                            </footer>
+                        </blockquote>
+                    </article>
+
+                    <article class="portrait-card" role="listitem">
+                        <figure class="portrait-img">
+                            <img src="staff-3.jpg" alt="Marcus K. wearing Avera" loading="lazy">
+                        </figure>
+                        <blockquote class="portrait-content">
+                            <p class="portrait-quote">"Architecture you can wear. The seams are precise, almost
+                                invisible yet structural."</p>
+                            <footer class="portrait-meta">
+                                <cite class="p-name">MARCUS K.</cite>
+                                <span class="p-role">Creative Lead</span>
+                            </footer>
+                        </blockquote>
+                    </article>
+
+                    <article class="portrait-card" role="listitem">
+                        <figure class="portrait-img">
+                            <img src="best-1.jpg" alt="Sara L. wearing Avera" loading="lazy">
+                        </figure>
+                        <blockquote class="portrait-content">
+                            <p class="portrait-quote">"Finding balance between fluid movement and rigid structure is
+                                what makes this special."</p>
+                            <footer class="portrait-meta">
+                                <cite class="p-name">SARA L.</cite>
+                                <span class="p-role">Visual Artist</span>
+                            </footer>
+                        </blockquote>
+                    </article>
+
+                    <article class="portrait-card" role="listitem">
+                        <figure class="portrait-img">
+                            <img src="best-3.jpg" alt="Julian R. wearing Avera" loading="lazy">
+                        </figure>
+                        <blockquote class="portrait-content">
+                            <p class="portrait-quote">"A silhouette that doesn't scream but speaks volumes through its
+                                pure construction."</p>
+                            <footer class="portrait-meta">
+                                <cite class="p-name">JULIAN R.</cite>
+                                <span class="p-role">Design Consultant</span>
+                            </footer>
+                        </blockquote>
+                    </article>
+
+                    <article class="portrait-card" role="listitem">
+                        <figure class="portrait-img">
+                            <img src="new-2.jpg" alt="Anna S. wearing Avera" loading="lazy">
+                        </figure>
+                        <blockquote class="portrait-content">
+                            <p class="portrait-quote">"It's about the sensory experience. The weight, the drape, the
+                                texture — all in harmony."</p>
+                            <footer class="portrait-meta">
+                                <cite class="p-name">ANNA S.</cite>
+                                <span class="p-role">Editorial Stylist</span>
+                            </footer>
+                        </blockquote>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-container">
+
+            <div class="footer-top">
+
+                <!-- Link Columns -->
+                <nav class="footer-links-side" aria-label="Footer navigation">
+                    <div class="link-column">
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="#">Search</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h3>HELP</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h3>COLLECTIVE</h3>
+                        <ul>
+                            <li><a href="#">The Atelier</a></li>
+                            <li><a href="#">Archive</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter-side">
+                    <span class="news-label">NEWSLETTER</span>
+                    <h2 class="news-title">Join the <br><span class="italic">Inner Circle</span></h2>
+                    <p class="news-subtext">
+                        Get early access and limited release style insights delivered straight to your inbox.
+                    </p>
+                    <form class="news-input-box" aria-label="Newsletter signup" onsubmit="return false;">
+                        <label for="newsletter-email" class="sr-only">Your email address</label>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Enter Your Email"
+                            autocomplete="email" required>
+                        <button class="news-submit" type="submit" aria-label="Subscribe to newsletter">
+                            <i data-lucide="arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="bottom-left">
+                    <a href="#" class="footer-logo" aria-label="Avera home">Avera</a>
+                    <p class="copyright">© 2026 AVERA — POWERED BY SHOPIFY</p>
+                    <p class="footer-credit">
+                        Built by Kunal.
+                        <a href="https://instagram.com/iiblamekunal" target="_blank" rel="noopener noreferrer">@iiblamekunal</a>
+                    </p>
+                    <div class="payment-methods">
+                        <img src="images/payment-methods.png" alt="Accepted payment methods">
+                    </div>
+                </div>
+
+                <div class="bottom-right">
+                    <div class="footer-socials">
+                        <a href="https://instagram.com/iiblamekunal" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" aria-label="Follow Avera on Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kkunaall/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon social-label" aria-label="Visit Kunal on LinkedIn">in</a>
+                        <a href="https://www.fiverr.com/imperialmotivat" target="_blank" rel="noopener noreferrer"
+                            class="social-icon social-label" aria-label="Visit Kunal on Fiverr">fi</a>
+                    </div>
+                    <div class="footer-settings">
+                        <button class="setting-item" aria-label="Change language: currently English">ENGLISH</button>
+                        <button class="setting-item" aria-label="Change currency: currently USD">USD</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    </script>
+
+</body>
+
+</html>

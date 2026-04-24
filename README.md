@@ -1,4 +1,4 @@
-# Avera Fashion Landing Page
+# Aurem Fashion Landing Page
 
 A stylish static fashion storefront concept built with plain `HTML`, `CSS`, and `JavaScript`.
 

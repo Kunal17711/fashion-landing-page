@@ -1,5 +1,5 @@
 /* ============================================================
-   AVERA — PREMIUM FASHION JS
+   AUREM — PREMIUM FASHION JS
    Enhanced with: custom cursor, page loader, drag scrolling,
    scroll reveal, smooth transitions, and full interactivity.
    ============================================================ */
@@ -136,7 +136,7 @@ function initPageLoader() {
     if (!qs('.page-loader')) {
         const loader = document.createElement('div');
         loader.className = 'page-loader';
-        loader.innerHTML = '<span class="loader-text">Avera</span>';
+        loader.innerHTML = '<span class="loader-text">Aurem</span>';
         document.body.prepend(loader);
     }
 
@@ -468,7 +468,7 @@ function initEssentialsCarousel() {
                     <button class="choose-options-btn" aria-label="Choose options for ${p.title}">CHOOSE OPTIONS</button>
                 </div>
                 <div class="essentials-info">
-                    <span class="essentials-brand">AVERA</span>
+                    <span class="essentials-brand">AUREM</span>
                     <h3 class="essentials-name">${p.title}</h3>
                     <p class="essentials-price">${p.price}</p>
                     <div class="color-swatches" aria-label="Available colors">${swatches}</div>
@@ -620,7 +620,7 @@ function initWardrobeGrid() {
                                 </div>
                             </div>
                             <div class="product-info">
-                                <span class="brand-name">AVERA</span>
+                                <span class="brand-name">AUREM</span>
                                 <h3 class="product-title">${p.title}</h3>
                                 <p class="product-price">${p.price}</p>
                             </div>

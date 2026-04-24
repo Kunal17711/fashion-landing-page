@@ -1,613 +1,1049 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVERA | Camel Color-Block Jacket</title>
-    <!-- Google Fonts -->
+    <meta name="description" content="Aurem product detail page for the Camel Color-Block Jacket.">
+    <title>Aurem | Camel Color-Block Jacket</title>
+    <link rel="icon" href="data:,">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --color-beige: #F9F9F7;
-            --color-soft-white: #FFFFFF;
-            --color-charcoal: #1A1A1A;
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'Montserrat', sans-serif;
-            --ease-cinema: cubic-bezier(0.1, 0, 0.1, 1);
+            --product-ink: #171512;
+            --product-muted: #7f776d;
+            --product-sand: #f5f0e8;
+            --product-line: rgba(23, 21, 18, 0.1);
+            --product-panel: #fbf8f3;
+            --product-accent: #d3b588;
         }
 
-        body {
-            background-color: var(--color-soft-white);
-            color: var(--color-charcoal);
+        body.product-page-body {
             margin: 0;
-            overflow-x: hidden;
+            background:
+                radial-gradient(circle at top left, rgba(211, 181, 136, 0.16), transparent 28%),
+                linear-gradient(180deg, #f8f4ee 0%, #ffffff 36%);
+            color: var(--product-ink);
             font-family: var(--font-sans);
+            overflow-x: hidden;
         }
 
-        /* --- Header --- */
-        .product-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 5rem;
-            z-index: 100;
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 4px;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .back-link {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-
-        .back-link:hover { opacity: 1; }
-
-        .product-page-container {
-            display: flex;
+        .product-page {
             min-height: 100vh;
-            width: 100%;
         }
 
-        /* --- Left Side: Image Gallery (60%) --- */
-        .product-gallery {
-            width: 60%;
-            height: 100vh;
+        .product-shell {
+            width: min(100%, 1520px);
+            margin: 0 auto;
+            padding: 24px var(--container-pad) 80px;
+        }
+
+        .product-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .product-logo {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            letter-spacing: 4px;
+            color: var(--product-ink);
+        }
+
+        .product-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .product-link-chip {
+            font-size: 0.66rem;
+            letter-spacing: 2.6px;
+            text-transform: uppercase;
+            color: var(--product-ink);
+            border: 1px solid var(--product-line);
+            padding: 0.95rem 1.3rem;
+            border-radius: 999px;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .product-link-chip:hover {
+            transform: translateY(-2px);
+            border-color: rgba(23, 21, 18, 0.28);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .product-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.18fr) minmax(380px, 0.82fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .product-gallery-panel {
             position: sticky;
-            top: 0;
-            background-color: var(--color-beige);
+            top: 24px;
+            background: rgba(255, 255, 255, 0.58);
+            border: 1px solid rgba(23, 21, 18, 0.08);
+            backdrop-filter: blur(14px);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.06);
+        }
+
+        .product-gallery-grid {
+            display: grid;
+            grid-template-columns: 112px minmax(0, 1fr);
+            min-height: 820px;
+        }
+
+        .gallery-rail {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .main-image-container {
-            width: 100%;
-            height: 85%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .main-image-container img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            transition: opacity 0.5s var(--ease-cinema);
-        }
-
-        .thumbnail-gallery {
-            width: 100%;
-            height: 15%;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            padding-bottom: 2rem;
+            gap: 0.9rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.78);
+            border-right: 1px solid rgba(23, 21, 18, 0.06);
         }
 
         .thumb-item {
-            width: 60px;
-            height: 80px;
-            cursor: pointer;
-            border-radius: 4px;
-            overflow: hidden;
-            opacity: 0.5;
-            transition: all 0.3s ease;
             border: 1px solid transparent;
-        }
-
-        .thumb-item.active {
-            opacity: 1;
-            border-color: #000;
+            background: #fff;
+            padding: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            aspect-ratio: 3 / 4;
         }
 
         .thumb-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
-        /* --- Right Side: Details Panel (40%) --- */
+        .thumb-item.active {
+            border-color: rgba(23, 21, 18, 0.26);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(4px);
+        }
+
+        .product-stage {
+            position: relative;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            min-height: 820px;
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 26%),
+                linear-gradient(145deg, #e8dfd2 0%, #f6f0e8 48%, #ebe1d4 100%);
+        }
+
+        .product-stage-meta {
+            position: absolute;
+            top: 22px;
+            left: 26px;
+            right: 26px;
+            z-index: 2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .product-badge {
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            font-size: 0.63rem;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(23, 21, 18, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .product-stage-note {
+            max-width: 260px;
+            padding: 1rem 1.1rem;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(23, 21, 18, 0.08);
+            font-size: 0.76rem;
+            line-height: 1.7;
+            color: #61594f;
+        }
+
+        .main-image-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6.5rem 2rem 1.4rem;
+        }
+
+        .main-image-wrap::before {
+            content: "";
+            position: absolute;
+            width: min(62vw, 720px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.75), transparent 70%);
+            opacity: 0.72;
+        }
+
+        #main-product-image {
+            position: relative;
+            z-index: 1;
+            width: min(100%, 760px);
+            max-height: 700px;
+            object-fit: contain;
+            filter: drop-shadow(0 36px 80px rgba(0, 0, 0, 0.18));
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        #main-product-image.switching {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+
+        .product-stage-footer {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            background: rgba(23, 21, 18, 0.08);
+        }
+
+        .product-stage-stat {
+            background: rgba(255, 255, 255, 0.72);
+            padding: 1rem 1.2rem;
+        }
+
+        .product-stage-stat span {
+            display: block;
+        }
+
+        .product-stage-stat .label {
+            font-size: 0.58rem;
+            letter-spacing: 2.3px;
+            text-transform: uppercase;
+            color: var(--product-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .product-stage-stat .value {
+            font-size: 0.85rem;
+            color: var(--product-ink);
+        }
+
         .product-details-panel {
-            width: 40%;
-            padding: 120px 5rem;
-            overflow-y: auto;
-            background: #FFF;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            background: var(--product-panel);
+            border: 1px solid rgba(23, 21, 18, 0.08);
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-intro {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--product-line);
         }
 
         .brand-label {
-            font-size: 0.65rem;
-            letter-spacing: 5px;
-            color: #999;
-            margin-bottom: 1rem;
+            font-size: 0.62rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            color: var(--product-muted);
+            margin-bottom: 1rem;
         }
 
         .product-title {
             font-family: var(--font-serif);
-            font-size: 3rem;
+            font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+            line-height: 0.95;
             font-weight: 500;
-            line-height: 1.1;
             margin-bottom: 1rem;
+            color: var(--product-ink);
         }
 
         .product-subtitle {
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            max-width: 400px;
+            font-size: 0.92rem;
+            line-height: 1.9;
+            color: #655d53;
+            max-width: 520px;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.2rem;
+            flex-wrap: wrap;
         }
 
         .product-price {
-            font-size: 1.8rem;
+            font-size: 2.1rem;
             font-weight: 500;
-            margin-bottom: 2.5rem;
+            color: var(--product-ink);
+        }
+
+        .price-caption {
+            display: block;
+            margin-top: 0.35rem;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--product-muted);
         }
 
         .stock-status {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            margin-bottom: 3rem;
+            gap: 0.65rem;
+            padding: 0.82rem 1rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(46, 204, 113, 0.18);
+            font-size: 0.66rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1d8f4f;
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #2ECC71;
+            width: 9px;
+            height: 9px;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+            background: #1dbe63;
+            box-shadow: 0 0 0 6px rgba(29, 190, 99, 0.12);
         }
 
-        /* Selectors */
-        .selector-group {
-            margin-bottom: 3rem;
+        .product-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(23, 21, 18, 0.06);
+            border-radius: 22px;
+            padding: 1.15rem 1.1rem;
+        }
+
+        .highlight-card .label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.58rem;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            color: var(--product-muted);
+        }
+
+        .highlight-card .value {
+            font-size: 0.84rem;
+            line-height: 1.6;
+        }
+
+        .selector-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .selector-block {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(23, 21, 18, 0.06);
+            border-radius: 24px;
+            padding: 1.2rem;
+        }
+
+        .selector-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .selector-label {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            display: block;
+            font-size: 0.62rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--product-muted);
+        }
+
+        .selector-meta {
+            font-size: 0.72rem;
+            color: #60594f;
         }
 
         .size-options {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.7rem;
         }
 
         .size-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid #DDD;
-            background: none;
-            cursor: pointer;
-            font-size: 0.75rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-width: 58px;
+            height: 54px;
+            border-radius: 999px;
+            border: 1px solid rgba(23, 21, 18, 0.12);
+            background: #fff;
+            color: var(--product-ink);
+            font-size: 0.74rem;
+            letter-spacing: 1px;
+            transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
 
+        .size-btn:hover,
         .size-btn.active {
-            background: #000;
-            color: #FFF;
-            border-color: #000;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            border: 1px solid #DDD;
-            width: fit-content;
-            border-radius: 30px;
-            padding: 0.5rem 1.2rem;
-            gap: 1.5rem;
-        }
-
-        .qty-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: #999;
-            transition: color 0.3s ease;
-        }
-
-        .qty-btn:hover { color: #000; }
-
-        .qty-value { font-size: 0.9rem; font-weight: 500; }
-
-        /* Buttons */
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 4rem;
-        }
-
-        .btn-primary, .btn-secondary {
-            width: 100%;
-            padding: 1.2rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s var(--ease-cinema);
-            font-weight: 600;
-        }
-
-        .btn-primary {
-            background: none;
-            border: 1px solid #000;
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            background: #000;
-            color: #FFF;
-        }
-
-        .btn-secondary {
-            background: #000;
-            border: 1px solid #000;
-            color: #FFF;
-        }
-
-        .btn-secondary:hover {
-            opacity: 0.9;
+            background: var(--product-ink);
+            color: #fff;
+            border-color: var(--product-ink);
             transform: translateY(-2px);
         }
 
-        /* Payment */
-        .payment-section {
-            padding-top: 2rem;
-            border-top: 1px solid #EEE;
-            margin-bottom: 4rem;
+        .color-pills {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
         }
 
-        .payment-label {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            color: #999;
-            margin-bottom: 1.2rem;
-            display: block;
+        .color-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.72rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(23, 21, 18, 0.12);
+            background: #fff;
+            font-size: 0.72rem;
+            color: var(--product-ink);
+        }
+
+        .swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .quantity-purchase-row {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: 0.9rem;
+        }
+
+        .quantity-selector {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            border: 1px solid rgba(23, 21, 18, 0.12);
+            border-radius: 999px;
+            background: #fff;
+            padding: 0.85rem 1.25rem;
+        }
+
+        .qty-btn {
+            font-size: 1.1rem;
+            color: var(--product-ink);
+            padding: 0;
+            line-height: 1;
+        }
+
+        .qty-value {
+            min-width: 18px;
+            text-align: center;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.66rem;
+            padding: 1.15rem 1.4rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--product-ink);
+            color: #fff;
+            box-shadow: 0 20px 40px rgba(23, 21, 18, 0.12);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 24px 44px rgba(23, 21, 18, 0.16);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--product-ink);
+            border: 1px solid rgba(23, 21, 18, 0.12);
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .payment-section,
+        .info-bars,
+        .accordion-group,
+        .editorial-note,
+        .shipping-note {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(23, 21, 18, 0.06);
+            border-radius: 24px;
+            padding: 1.3rem;
+        }
+
+        .payment-header,
+        .editorial-note-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-label,
+        .editorial-note-label {
+            font-size: 0.62rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--product-muted);
         }
 
         .payment-icons {
             display: flex;
-            gap: 1.5rem;
-            opacity: 0.6;
+            gap: 0.8rem;
+            color: var(--product-ink);
         }
 
-        /* Progress Bars */
+        .payment-icons i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .payment-copy,
+        .shipping-note p,
+        .editorial-note p {
+            font-size: 0.82rem;
+            line-height: 1.8;
+            color: #655d53;
+        }
+
         .info-bars {
-            margin-bottom: 4rem;
+            display: grid;
+            gap: 1rem;
         }
 
         .info-bar-item {
-            margin-bottom: 2rem;
+            display: grid;
+            gap: 0.7rem;
         }
 
         .bar-label {
             display: flex;
             justify-content: space-between;
-            font-size: 0.65rem;
+            gap: 1rem;
+            font-size: 0.62rem;
             letter-spacing: 2px;
-            margin-bottom: 0.8rem;
-            color: #999;
+            text-transform: uppercase;
+            color: var(--product-muted);
         }
 
         .progress-track {
             width: 100%;
-            height: 1px;
-            background: #EEE;
-            position: relative;
+            height: 6px;
+            border-radius: 999px;
+            background: rgba(23, 21, 18, 0.08);
+            overflow: hidden;
         }
 
-        .progress-dot {
-            position: absolute;
-            top: 50%;
-            width: 8px;
-            height: 8px;
-            background: #000;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+        .progress-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--product-ink), var(--product-accent));
         }
 
-        /* Accordions */
         .accordion-group {
-            border-top: 1px solid #EEE;
+            padding: 0;
+            overflow: hidden;
         }
 
-        .accordion-item {
-            border-bottom: 1px solid #EEE;
+        .accordion-item + .accordion-item {
+            border-top: 1px solid rgba(23, 21, 18, 0.08);
         }
 
         .accordion-header {
-            padding: 1.5rem 0;
+            width: 100%;
+            padding: 1.3rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: 500;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
+            color: var(--product-ink);
+            text-align: left;
+        }
+
+        .accordion-icon {
+            transition: transform 0.25s ease;
         }
 
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s var(--ease-cinema);
-            font-size: 0.85rem;
-            line-height: 1.8;
-            color: #666;
-            padding-bottom: 0;
+            padding: 0 1.3rem;
+            color: #655d53;
+            font-size: 0.84rem;
+            line-height: 1.9;
+            transition: max-height 0.35s ease, padding-bottom 0.35s ease;
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 200px;
-            padding-bottom: 1.5rem;
-        }
-
-        .accordion-icon {
-            transition: transform 0.4s ease;
+            max-height: 220px;
+            padding-bottom: 1.25rem;
         }
 
         .accordion-item.active .accordion-icon {
             transform: rotate(180deg);
         }
 
-        /* Mobile */
-        @media (max-width: 1024px) {
-            .product-page-container { flex-direction: column; }
-            .product-gallery { width: 100%; height: 60vh; position: relative; }
-            .product-details-panel { width: 100%; padding: 40px 2rem; }
-            .product-title { font-size: 2.2rem; }
-            
-            .action-buttons {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: #FFF;
-                padding: 1rem 2rem;
-                flex-direction: row;
-                z-index: 1000;
-                box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
-                margin-bottom: 0;
+        .product-extra-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .editorial-note {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 190px;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .editorial-note img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .shipping-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .shipping-note h3 {
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--product-ink);
+        }
+
+        @media (max-width: 1180px) {
+            .product-hero,
+            .product-extra-grid {
+                grid-template-columns: 1fr;
             }
-            .btn-secondary { display: none; } /* Show only Add to Bag on mobile sticky */
-            body { padding-bottom: 80px; }
+
+            .product-gallery-panel {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .product-gallery-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .gallery-rail {
+                order: 2;
+                flex-direction: row;
+                overflow-x: auto;
+                border-right: 0;
+                border-top: 1px solid rgba(23, 21, 18, 0.06);
+            }
+
+            .thumb-item {
+                min-width: 92px;
+            }
+
+            .product-stage,
+            .main-image-wrap {
+                min-height: auto;
+            }
+
+            .product-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .quantity-purchase-row {
+                grid-template-columns: 1fr;
+            }
+
+            .editorial-note {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .product-shell {
+                padding: 16px 1rem 56px;
+            }
+
+            .product-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .product-nav-links {
+                width: 100%;
+            }
+
+            .product-link-chip {
+                flex: 1 1 calc(50% - 0.5rem);
+                text-align: center;
+            }
+
+            .product-details-panel {
+                padding: 1.1rem;
+                border-radius: 24px;
+            }
+
+            .product-stage-meta {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 1rem 1rem 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .main-image-wrap {
+                padding-top: 1rem;
+            }
+
+            .product-stage-footer {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body>
 
-    <header class="product-header">
-        <a href="index.html" class="logo">AVERA</a>
-        <a href="index.html" class="back-link">
-            <i data-lucide="arrow-left" style="width: 14px;"></i>
-            BACK TO COLLECTION
-        </a>
-    </header>
+<body class="product-page-body">
+    <main class="product-page">
+        <div class="product-shell">
+            <header class="product-header">
+                <a href="index.html" class="product-logo">Aurem</a>
+                <nav class="product-nav-links" aria-label="Product navigation">
+                    <a href="index.html" class="product-link-chip">Back Home</a>
+                    <a href="spring-2024.html" class="product-link-chip">Spring 2024</a>
+                    <a href="about-us.html" class="product-link-chip">About Us</a>
+                </nav>
+            </header>
 
-    <div class="product-page-container">
-        <!-- Left Side: Image Gallery -->
-        <div class="product-gallery">
-            <div class="main-image-container">
-                <img id="main-product-image" src="new-1.jpg" alt="Camel Color-Block Jacket">
-            </div>
-            <div class="thumbnail-gallery">
-                <div class="thumb-item active" onclick="changeImage('new-1.jpg', this)">
-                    <img src="new-1.jpg" alt="View 1">
+            <section class="product-hero" aria-label="Product detail">
+                <div class="product-gallery-panel">
+                    <div class="product-gallery-grid">
+                        <div class="gallery-rail" aria-label="Product thumbnails">
+                            <button class="thumb-item active" onclick="changeImage('new-1.jpg', this)" aria-label="View front">
+                                <img src="new-1.jpg" alt="Camel Color-Block Jacket front view">
+                            </button>
+                            <button class="thumb-item" onclick="changeImage('new-2.jpg', this)" aria-label="View profile">
+                                <img src="new-2.jpg" alt="Camel Color-Block Jacket profile view">
+                            </button>
+                            <button class="thumb-item" onclick="changeImage('new-3.jpg', this)" aria-label="View close-up">
+                                <img src="new-3.jpg" alt="Camel Color-Block Jacket close-up">
+                            </button>
+                            <button class="thumb-item" onclick="changeImage('campaign-hero-1.jpg', this)" aria-label="View campaign">
+                                <img src="campaign-hero-1.jpg" alt="Camel Color-Block Jacket campaign image">
+                            </button>
+                        </div>
+
+                        <div class="product-stage">
+                            <div class="product-stage-meta">
+                                <span class="product-badge">Collector Piece / Limited Run</span>
+                                <div class="product-stage-note">
+                                    Tailored to read like sculpture in stillness, then soften once the body starts moving.
+                                </div>
+                            </div>
+
+                            <div class="main-image-wrap">
+                                <img id="main-product-image" src="new-1.jpg" alt="Camel Color-Block Jacket">
+                            </div>
+
+                            <div class="product-stage-footer">
+                                <div class="product-stage-stat">
+                                    <span class="label">Fabric</span>
+                                    <span class="value">Heavy satin blend</span>
+                                </div>
+                                <div class="product-stage-stat">
+                                    <span class="label">Mood</span>
+                                    <span class="value">Tailored / modern / polished</span>
+                                </div>
+                                <div class="product-stage-stat">
+                                    <span class="label">Delivery</span>
+                                    <span class="value">Ships in 24 hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="thumb-item" onclick="changeImage('new-2.jpg', this)">
-                    <img src="new-2.jpg" alt="View 2">
+
+                <div class="product-details-panel">
+                    <section class="product-intro">
+                        <p class="brand-label">Aurem Atelier / Signature Outerwear</p>
+                        <h1 class="product-title">Camel Color-<br>Block Jacket</h1>
+                        <p class="product-subtitle">
+                            A directional outer layer designed with soft volume, controlled structure, and tonal panels
+                            that make the silhouette feel elevated, cinematic, and quietly expensive.
+                        </p>
+
+                        <div class="product-price-row">
+                            <div>
+                                <div class="product-price">$247.00</div>
+                                <span class="price-caption">Shipping calculated at checkout</span>
+                            </div>
+                            <div class="stock-status">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                <span>In stock / ready to ship</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="product-highlights" aria-label="Product highlights">
+                        <article class="highlight-card">
+                            <span class="label">Material feel</span>
+                            <span class="value">Weighted, smooth, softly reflective finish</span>
+                        </article>
+                        <article class="highlight-card">
+                            <span class="label">Silhouette</span>
+                            <span class="value">Relaxed shoulder with refined waist shaping</span>
+                        </article>
+                        <article class="highlight-card">
+                            <span class="label">Styling note</span>
+                            <span class="value">Pairs best with wide trousers and tonal footwear</span>
+                        </article>
+                    </section>
+
+                    <section class="selector-grid" aria-label="Purchase options">
+                        <div class="selector-block">
+                            <div class="selector-head">
+                                <span class="selector-label">Select size</span>
+                                <span class="selector-meta" id="selected-size">Selected: S</span>
+                            </div>
+                            <div class="size-options">
+                                <button class="size-btn" data-size="XS">XS</button>
+                                <button class="size-btn active" data-size="S">S</button>
+                                <button class="size-btn" data-size="M">M</button>
+                                <button class="size-btn" data-size="L">L</button>
+                            </div>
+                        </div>
+
+                        <div class="selector-block">
+                            <div class="selector-head">
+                                <span class="selector-label">Color story</span>
+                                <span class="selector-meta">Signature camel edit</span>
+                            </div>
+                            <div class="color-pills">
+                                <div class="color-pill"><span class="swatch" style="background:#b8a188;"></span> Camel Sand</div>
+                                <div class="color-pill"><span class="swatch" style="background:#e8ddd0;"></span> Soft Bone</div>
+                                <div class="color-pill"><span class="swatch" style="background:#4d4037;"></span> Espresso Edge</div>
+                            </div>
+                        </div>
+
+                        <div class="selector-block">
+                            <div class="selector-head">
+                                <span class="selector-label">Purchase</span>
+                                <span class="selector-meta">Flexible checkout options</span>
+                            </div>
+                            <div class="quantity-purchase-row">
+                                <div class="quantity-selector" aria-label="Quantity selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <span class="qty-value">1</span>
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="btn-primary">Add To Bag</button>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <button class="btn-secondary">Buy It Now</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="payment-section">
+                        <div class="payment-header">
+                            <span class="payment-label">Secure payment</span>
+                            <div class="payment-icons" aria-hidden="true">
+                                <i data-lucide="credit-card"></i>
+                                <i data-lucide="shield-check"></i>
+                                <i data-lucide="wallet"></i>
+                            </div>
+                        </div>
+                        <p class="payment-copy">
+                            Secure checkout with encrypted payment processing, instant order confirmation, and priority dispatch on in-stock pieces.
+                        </p>
+                    </section>
+
+                    <section class="info-bars" aria-label="Product metrics">
+                        <div class="info-bar-item">
+                            <div class="bar-label">
+                                <span>Fabric weight</span>
+                                <span>80 / 100</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="info-bar-item">
+                            <div class="bar-label">
+                                <span>Tailoring precision</span>
+                                <span>64 / 100</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 64%;"></div></div>
+                        </div>
+                        <div class="info-bar-item">
+                            <div class="bar-label">
+                                <span>Fluid movement</span>
+                                <span>72 / 100</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 72%;"></div></div>
+                        </div>
+                    </section>
+
+                    <section class="accordion-group">
+                        <div class="accordion-item active">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>The Fabric</span>
+                                <i data-lucide="chevron-down" class="accordion-icon" aria-hidden="true"></i>
+                            </button>
+                            <div class="accordion-content">
+                                Developed in a dense satin blend that holds shape while reflecting light softly. The result is polished and sculptural, without feeling stiff.
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>The Silhouette</span>
+                                <i data-lucide="chevron-down" class="accordion-icon" aria-hidden="true"></i>
+                            </button>
+                            <div class="accordion-content">
+                                Relaxed through the upper body, then gently refined through the waist and hem. It is designed to feel sharp from a distance and elegant up close.
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>The Details</span>
+                                <i data-lucide="chevron-down" class="accordion-icon" aria-hidden="true"></i>
+                            </button>
+                            <div class="accordion-content">
+                                Tonal finishing, premium buttons, reinforced internal seams, and a color-blocked treatment that gives the jacket a stronger editorial presence.
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <div class="thumb-item" onclick="changeImage('new-3.jpg', this)">
-                    <img src="new-3.jpg" alt="View 3">
+            </section>
+
+            <section class="product-extra-grid" aria-label="Additional product information">
+                <article class="editorial-note">
+                    <div>
+                        <div class="editorial-note-header">
+                            <span class="editorial-note-label">Editorial styling note</span>
+                        </div>
+                        <p>
+                            Layer it over monochrome separates or wide-leg satin trousers. The jacket works best when the rest of the outfit stays quiet and lets the cut lead.
+                        </p>
+                    </div>
+                    <img src="staff-2.jpg" alt="Editorial styling inspiration">
+                </article>
+
+                <div class="shipping-grid">
+                    <article class="shipping-note">
+                        <h3>Delivery & returns</h3>
+                        <p>Complimentary shipping on orders over $100 and easy returns within 14 days for unworn items.</p>
+                    </article>
+                    <article class="shipping-note">
+                        <h3>Care instructions</h3>
+                        <p>Dry clean only. Store on a broad hanger and steam lightly to maintain the jacket's line and surface sheen.</p>
+                    </article>
                 </div>
-                <div class="thumb-item" onclick="changeImage('campaign-hero-1.jpg', this)">
-                    <img src="campaign-hero-1.jpg" alt="View 4">
-                </div>
-            </div>
+            </section>
         </div>
-
-        <!-- Right Side: Details Panel -->
-        <div class="product-details-panel">
-            <p class="brand-label">AVERA FASHION CLOTHING</p>
-            <h1 class="product-title">Camel Color-Block Jacket</h1>
-            <p class="product-subtitle">A masterclass in contemporary tailoring, this structured jacket features a refined camel palette with bold architectural details.</p>
-            
-            <p class="product-price">$247.00</p>
-
-            <div class="stock-status">
-                <span class="status-dot"></span>
-                <span>IN STOCK / READY TO SHIP</span>
-            </div>
-
-            <!-- Size Selector -->
-            <div class="selector-group">
-                <span class="selector-label">SELECT SIZE</span>
-                <div class="size-options">
-                    <button class="size-btn">XS</button>
-                    <button class="size-btn active">S</button>
-                    <button class="size-btn">M</button>
-                    <button class="size-btn">L</button>
-                </div>
-            </div>
-
-            <!-- Quantity Selector -->
-            <div class="selector-group">
-                <span class="selector-label">QUANTITY</span>
-                <div class="quantity-selector">
-                    <button class="qty-btn minus">-</button>
-                    <span class="qty-value">1</span>
-                    <button class="qty-btn plus">+</button>
-                </div>
-            </div>
-
-            <!-- Actions -->
-            <div class="action-buttons">
-                <button class="btn-primary">ADD TO BAG</button>
-                <button class="btn-secondary">BUY IT NOW</button>
-            </div>
-
-            <!-- Payment -->
-            <div class="payment-section">
-                <span class="payment-label">SECURE PAYMENT</span>
-                <div class="payment-icons">
-                    <i data-lucide="credit-card"></i>
-                    <i data-lucide="shield-check"></i>
-                    <i data-lucide="wallet"></i>
-                </div>
-            </div>
-
-            <!-- Info Bars -->
-            <div class="info-bars">
-                <div class="info-bar-item">
-                    <div class="bar-label">
-                        <span>FABRIC</span>
-                        <span>HEAVY SATIN</span>
-                    </div>
-                    <div class="progress-track"><div class="progress-dot" style="left: 80%;"></div></div>
-                </div>
-                <div class="info-bar-item">
-                    <div class="bar-label">
-                        <span>FIT</span>
-                        <span>LOOSE / TAILORED</span>
-                    </div>
-                    <div class="progress-track"><div class="progress-dot" style="left: 40%;"></div></div>
-                </div>
-                <div class="info-bar-item">
-                    <div class="bar-label">
-                        <span>FEEL</span>
-                        <span>STRUCTURED / FLUID</span>
-                    </div>
-                    <div class="progress-track"><div class="progress-dot" style="left: 70%;"></div></div>
-                </div>
-            </div>
-
-            <!-- Accordions -->
-            <div class="accordion-group">
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>THE FABRIC</span>
-                        <i data-lucide="chevron-down" class="accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Crafted from a custom-developed heavy satin blend, this jacket offers a luxurious sheen and substantial weight that maintains its architectural form.
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>THE SILHOUETTE</span>
-                        <i data-lucide="chevron-down" class="accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        A modern interpretation of the classic chore coat, featuring dropped shoulders and a slightly tapered waist for a silhouette that is both relaxed and precise.
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>THE DETAILS</span>
-                        <i data-lucide="chevron-down" class="accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        Finished with horn buttons, reinforced patch pockets, and tonal topstitching. Hand-finished in our artisan atelier.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <script>
         if (window.lucide) {
             window.lucide.createIcons();
         }
 
-        // Image Gallery Logic
         function changeImage(src, thumb) {
             const mainImg = document.getElementById('main-product-image');
-            
-            // Fade out
-            mainImg.style.opacity = '0';
-            
+            mainImg.classList.add('switching');
+
             setTimeout(() => {
                 mainImg.src = src;
-                mainImg.style.opacity = '1';
-                
-                // Update active thumb
-                document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+                mainImg.onload = () => {
+                    mainImg.classList.remove('switching');
+                };
+                document.querySelectorAll('.thumb-item').forEach((item) => item.classList.remove('active'));
                 thumb.classList.add('active');
-            }, 300);
+            }, 180);
         }
 
-        // Size Toggle
-        document.querySelectorAll('.size-btn').forEach(btn => {
+        document.querySelectorAll('.size-btn').forEach((btn) => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.size-btn').forEach((item) => item.classList.remove('active'));
                 btn.classList.add('active');
+                document.getElementById('selected-size').textContent = `Selected: ${btn.dataset.size}`;
             });
         });
 
-        // Quantity Logic
         const qtyValue = document.querySelector('.qty-value');
         document.querySelector('.plus').addEventListener('click', () => {
-            qtyValue.textContent = parseInt(qtyValue.textContent) + 1;
+            qtyValue.textContent = String(parseInt(qtyValue.textContent, 10) + 1);
         });
         document.querySelector('.minus').addEventListener('click', () => {
-            if (parseInt(qtyValue.textContent) > 1) {
-                qtyValue.textContent = parseInt(qtyValue.textContent) - 1;
+            const current = parseInt(qtyValue.textContent, 10);
+            if (current > 1) {
+                qtyValue.textContent = String(current - 1);
             }
         });
 
-        // Accordion Logic
         function toggleAccordion(header) {
             const item = header.parentElement;
             const isActive = item.classList.contains('active');
-            
-            // Close others
-            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
-            
+            document.querySelectorAll('.accordion-item').forEach((entry) => entry.classList.remove('active'));
             if (!isActive) {
                 item.classList.add('active');
             }
         }
     </script>
 </body>
+
 </html>

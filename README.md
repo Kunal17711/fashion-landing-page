@@ -13,10 +13,10 @@ A stylish static fashion storefront concept built with plain `HTML`, `CSS`, and 
 
 ## Project Structure
 
-- [index.html](/E:/preview%20website/index.html)
-- [style.css](/E:/preview%20website/style.css)
-- [script.js](/E:/preview%20website/script.js)
-- [product.html](/E:/preview%20website/product.html)
+- [index.html](./index.html)
+- [style.css](./style.css)
+- [script.js](./script.js)
+- [product.html](./product.html)
 - `images/` and local JPG/PNG assets
 
 ## Run Locally
@@ -44,4 +44,4 @@ Then open `http://localhost:8000`.
 
 ## License
 
-This project is released under the MIT License. See [LICENSE](/E:/preview%20website/LICENSE).
+This project is released under the MIT License. See [LICENSE](./LICENSE).

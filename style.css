@@ -3668,69 +3668,6 @@ section {
 }
 
 @keyframes loaderPulse {
-
-    0%,
-    100% {
-        opacity: 0.3;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-.footer-settings {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.setting-item {
-    font-size: 0.62rem;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.35);
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: var(--font-sans);
-    transition: color var(--dur-fast) ease;
-    padding: 0;
-}
-
-.setting-item:hover {
-    color: var(--color-white);
-}
-
-
-/* ============================================================
-   25. PAGE LOADER
-   ============================================================ */
-.page-loader {
-    position: fixed;
-    inset: 0;
-    background: var(--color-charcoal);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.8s var(--ease-cinema);
-}
-
-.page-loader.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.loader-text {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-style: italic;
-    color: var(--color-white);
-    letter-spacing: 6px;
-    animation: loaderPulse 1.4s ease-in-out infinite;
-}
-
-@keyframes loaderPulse {
-
     0%,
     100% {
         opacity: 0.3;

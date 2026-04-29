@@ -388,10 +388,22 @@ function initHeroSlider() {
         }
 
         if (isMobile) {
-            gsap.set(leftSlides[nextIdx], { x: isNext ? '100%' : '-100%', zIndex: 2 });
-            gsap.set(leftSlides[currentIndex], { zIndex: 1 });
-            gsap.to(leftSlides[currentIndex], { x: isNext ? '-100%' : '100%', duration: DURATION, ease: EASE });
-            gsap.to(leftSlides[nextIdx], { x: '0%', duration: DURATION, ease: EASE, onComplete: finish });
+            // Animate both top and bottom slides horizontally on mobile
+            gsap.set([leftSlides[nextIdx], rightSlides[nextIdx]], { x: isNext ? '100%' : '-100%', zIndex: 2 });
+            gsap.set([leftSlides[currentIndex], rightSlides[currentIndex]], { zIndex: 1 });
+            
+            gsap.to([leftSlides[currentIndex], rightSlides[currentIndex]], { 
+                x: isNext ? '-100%' : '100%', 
+                duration: DURATION, 
+                ease: EASE 
+            });
+            
+            gsap.to([leftSlides[nextIdx], rightSlides[nextIdx]], { 
+                x: '0%', 
+                duration: DURATION, 
+                ease: EASE, 
+                onComplete: finish 
+            });
         } else {
             gsap.set(leftSlides[nextIdx], { y: isNext ? '100%' : '-100%', zIndex: 2 });
             gsap.set(rightSlides[nextIdx], { y: isNext ? '-100%' : '100%', zIndex: 2 });

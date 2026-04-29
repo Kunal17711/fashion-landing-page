@@ -4072,6 +4072,64 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    :root {
+        --container-pad: 1rem;
+        --section-gap: 60px;
+    }
+
+    .main-heading {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .subtext {
+        font-size: 0.55rem;
+        letter-spacing: 3px;
+    }
+
+    .slider-dots {
+        display: none; /* Hide dots on tiny screens to save space */
+    }
+
+    .slider-nav {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 1rem;
+        bottom: 20px;
+    }
+
+    .nav-arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on tiny screens for luxury feel */
+        gap: 2rem;
+    }
+
+    .essentials-card {
+        min-width: 85vw; /* Almost full width for better focus */
+    }
+
+    .season-top-title {
+        font-size: 1.8rem;
+    }
+
+    .news-title {
+        font-size: 1.6rem;
+    }
+
+    .news-input-box {
+        padding-bottom: 0.5rem;
+    }
+
+    .news-input-box input {
+        font-size: 0.75rem;
+    }
+}
+
 /* ============================================================
    27. COLLECTION JSX PAGES
    ============================================================ */
